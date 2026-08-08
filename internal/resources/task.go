@@ -104,7 +104,7 @@ func (r *TaskResource) Read(ctx context.Context, req resource.ReadRequest, resp 
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 }
 
-// Tasks are immutable after creation — update forces replacement via RequiresReplace on parent IDs.
+// Tasks are immutable after creation - update forces replacement via RequiresReplace on parent IDs.
 // A message/cron change requires destroy+create.
 func (r *TaskResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {
 	var plan taskModel

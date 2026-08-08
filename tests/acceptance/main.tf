@@ -61,7 +61,7 @@ resource "oai_endpoint" "test" {
 }
 
 # ── Layer ─────────────────────────────────────────────────────────────────────
-# llm_id is intentionally omitted — LLMs are discovered async after llm_key
+# llm_id is intentionally omitted - LLMs are discovered async after llm_key
 # creation. Set llm_id in a follow-up apply once discovery completes.
 
 resource "oai_layer" "test" {
@@ -124,7 +124,7 @@ variable "oai_test_principal_id"    { default = "" }
 variable "oai_test_principal_name"  { default = "" }
 variable "oai_test_principal_email" { default = "" }
 
-# ── Ticker config — workspace scope ───────────────────────────────────────────
+# ── Ticker config - workspace scope ───────────────────────────────────────────
 
 resource "oai_ticker_config" "workspace" {
   scope           = "workspace"
@@ -142,7 +142,7 @@ resource "oai_ticker_config" "workspace" {
   }
 }
 
-# ── Ticker config — agent scope ───────────────────────────────────────────────
+# ── Ticker config - agent scope ───────────────────────────────────────────────
 
 resource "oai_ticker_config" "agent" {
   scope            = "agent"

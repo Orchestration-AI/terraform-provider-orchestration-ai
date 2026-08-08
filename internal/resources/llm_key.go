@@ -91,7 +91,7 @@ func (r *LlmKeyResource) Read(ctx context.Context, req resource.ReadRequest, res
 	state.ClientID = types.StringValue(fmt.Sprintf("%v", result["client_id"]))
 	state.Provider = types.StringValue(fmt.Sprintf("%v", result["provider"]))
 
-	// client_secret is not returned by the API — preserve existing state
+	// client_secret is not returned by the API - preserve existing state
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 }
 
@@ -118,5 +118,5 @@ func (r *LlmKeyResource) Update(ctx context.Context, req resource.UpdateRequest,
 	resp.Diagnostics.Append(resp.State.Set(ctx, &plan)...)
 }
 
-// Delete is a no-op — the SDK has no delete endpoint for llm-keys.
+// Delete is a no-op - the SDK has no delete endpoint for llm-keys.
 func (r *LlmKeyResource) Delete(_ context.Context, _ resource.DeleteRequest, _ *resource.DeleteResponse) {}

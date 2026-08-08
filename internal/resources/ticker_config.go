@@ -19,7 +19,7 @@ import (
 
 // TickerConfigResource manages ticker configs at workspace, orchestration, or agent scope.
 // The API is upsert-based (PUT), so create and update both call the same endpoint.
-// Delete is a no-op — there is no delete endpoint for ticker configs.
+// Delete is a no-op - there is no delete endpoint for ticker configs.
 type TickerConfigResource struct{ client *client.Client }
 
 // workDayModel represents a single day's working hours window.
@@ -276,6 +276,6 @@ func (r *TickerConfigResource) Update(ctx context.Context, req resource.UpdateRe
 	}
 }
 
-// Delete is a no-op — the API has no delete for ticker configs.
+// Delete is a no-op - the API has no delete for ticker configs.
 func (r *TickerConfigResource) Delete(_ context.Context, _ resource.DeleteRequest, _ *resource.DeleteResponse) {
 }

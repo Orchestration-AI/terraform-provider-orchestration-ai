@@ -51,7 +51,7 @@ resource "oai_agent" "main" {
 }
 
 # ── Layer ─────────────────────────────────────────────────────────────────────
-# llm_id is optional — LLMs are discovered async after llm_key creation (~1 min)
+# llm_id is optional - LLMs are discovered async after llm_key creation (~1 min)
 
 resource "oai_layer" "main" {
   workspace_id     = oai_workspace.main.id
@@ -128,7 +128,7 @@ resource "oai_access" "main" {
   role            = "viewer"
 }
 
-# ── Ticker config — workspace scope ───────────────────────────────────────────
+# ── Ticker config - workspace scope ───────────────────────────────────────────
 
 resource "oai_ticker_config" "workspace" {
   scope           = "workspace"
@@ -146,7 +146,7 @@ resource "oai_ticker_config" "workspace" {
   }
 }
 
-# ── Ticker config — agent scope ───────────────────────────────────────────────
+# ── Ticker config - agent scope ───────────────────────────────────────────────
 
 resource "oai_ticker_config" "agent" {
   scope            = "agent"

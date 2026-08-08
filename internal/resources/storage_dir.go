@@ -93,14 +93,14 @@ func (r *StorageDirResource) Create(ctx context.Context, req resource.CreateRequ
 	resp.Diagnostics.Append(resp.State.Set(ctx, &plan)...)
 }
 
-// Dirs have no meaningful read — just preserve state.
+// Dirs have no meaningful read - just preserve state.
 func (r *StorageDirResource) Read(ctx context.Context, req resource.ReadRequest, resp *resource.ReadResponse) {
 	var state storageDirModel
 	resp.Diagnostics.Append(req.State.Get(ctx, &state)...)
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 }
 
-// Dirs are immutable (path is RequiresReplace) — no update needed.
+// Dirs are immutable (path is RequiresReplace) - no update needed.
 func (r *StorageDirResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {
 	var plan storageDirModel
 	resp.Diagnostics.Append(req.Plan.Get(ctx, &plan)...)

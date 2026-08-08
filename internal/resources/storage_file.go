@@ -192,7 +192,7 @@ func (r *StorageFileResource) Read(ctx context.Context, req resource.ReadRequest
 	if resp.Diagnostics.HasError() {
 		return
 	}
-	// Binary files can't round-trip through string state — drift detected via source_hash.
+	// Binary files can't round-trip through string state - drift detected via source_hash.
 	if !state.SourcePath.IsNull() && !state.SourcePath.IsUnknown() {
 		resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 		return

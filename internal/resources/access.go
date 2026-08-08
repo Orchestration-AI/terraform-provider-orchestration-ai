@@ -99,7 +99,7 @@ func (r *AccessResource) Read(ctx context.Context, req resource.ReadRequest, res
 	resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
 }
 
-// Access grants are immutable — role changes require destroy+create.
+// Access grants are immutable - role changes require destroy+create.
 func (r *AccessResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {
 	var plan accessModel
 	resp.Diagnostics.Append(req.Plan.Get(ctx, &plan)...)
