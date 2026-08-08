@@ -57,14 +57,16 @@ func (d *LlmsDataSource) Read(ctx context.Context, req datasource.ReadRequest, r
 		resp.Diagnostics.AddError("Read llms failed", err.Error())
 		return
 	}
-	var results []map[string]any
-	if err := client.DecodeResponse(httpResp, &results); err != nil {
+	var envelope struct {
+		Llms []map[string]any `json:"llms"`
+	}
+	if err := client.DecodeResponse(httpResp, &envelope); err != nil {
 		resp.Diagnostics.AddError("Read llms failed", err.Error())
 		return
 	}
 
-	items := make([]attr.Value, 0, len(results))
-	for _, r := range results {
+	items := make([]attr.Value, 0, len(envelope.Llms))
+	for _, r := range envelope.Llms {
 		obj, diags := types.ObjectValue(llmItemAttrTypes, map[string]attr.Value{
 			"id":       types.StringValue(fmt.Sprintf("%v", r["id"])),
 			"llm_name": types.StringValue(fmt.Sprintf("%v", r["llm_name"])),

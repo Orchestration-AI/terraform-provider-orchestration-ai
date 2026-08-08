@@ -51,13 +51,15 @@ func (d *LlmDataSource) Read(ctx context.Context, req datasource.ReadRequest, re
 		resp.Diagnostics.AddError("Read llms failed", err.Error())
 		return
 	}
-	var results []map[string]any
-	if err := client.DecodeResponse(httpResp, &results); err != nil {
+	var envelope struct {
+		Llms []map[string]any `json:"llms"`
+	}
+	if err := client.DecodeResponse(httpResp, &envelope); err != nil {
 		resp.Diagnostics.AddError("Read llms failed", err.Error())
 		return
 	}
 
-	for _, r := range results {
+	for _, r := range envelope.Llms {
 		if fmt.Sprintf("%v", r["llm_name"]) == state.LlmName.ValueString() {
 			state.ID = types.StringValue(fmt.Sprintf("%v", r["id"]))
 			resp.Diagnostics.Append(resp.State.Set(ctx, &state)...)
