@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"github.com/make-orchestration-ai/terraform-provider-orchestration-ai/internal/provider"
+	"github.com/Orchestration-AI/terraform-provider-orchestration-ai/internal/provider"
 )
 
 var version = "dev"

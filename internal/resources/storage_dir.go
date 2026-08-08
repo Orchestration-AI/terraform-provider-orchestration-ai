@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/stringdefault"
 	"github.com/hashicorp/terraform-plugin-framework/resource/schema/stringplanmodifier"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/make-orchestration-ai/terraform-provider-orchestration-ai/internal/client"
+	"github.com/Orchestration-AI/terraform-provider-orchestration-ai/internal/client"
 )
 
 type StorageDirResource struct{ client *client.Client }

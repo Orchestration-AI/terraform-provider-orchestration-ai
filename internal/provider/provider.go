@@ -9,9 +9,9 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/make-orchestration-ai/terraform-provider-orchestration-ai/internal/client"
-	"github.com/make-orchestration-ai/terraform-provider-orchestration-ai/internal/datasources"
-	"github.com/make-orchestration-ai/terraform-provider-orchestration-ai/internal/resources"
+	"github.com/Orchestration-AI/terraform-provider-orchestration-ai/internal/client"
+	"github.com/Orchestration-AI/terraform-provider-orchestration-ai/internal/datasources"
+	"github.com/Orchestration-AI/terraform-provider-orchestration-ai/internal/resources"
 )
 
 type OAIProvider struct{}
